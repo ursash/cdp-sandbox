@@ -1,0 +1,1234 @@
+{
+    "cdhVersion": "7.1.7",
+    "cmVersion": "7.4.4",
+    "displayName": "MyCDP",
+    "hostTemplates": [
+        {
+            "cardinality": 0,
+            "refName": "gateway",
+            "roleConfigGroupsRefNames": [
+                "atlas-GATEWAY-BASE",
+                "hbase-GATEWAY-BASE",
+                "hdfs-GATEWAY-BASE",
+                "hive-GATEWAY-BASE",
+                "hive_on_tez-GATEWAY-BASE",
+                "kafka-GATEWAY-BASE",
+                "knox-GATEWAY-BASE",
+                "livy-GATEWAY-BASE",
+                "ozone-GATEWAY-BASE",
+                "solr-GATEWAY-BASE",
+                "spark_on_yarn-GATEWAY-BASE",
+                "tez-GATEWAY-BASE",
+                "yarn-GATEWAY-BASE"
+            ]
+        }
+    ],
+    "instantiator": {
+        "clusterName": "SingleNodeCluster",
+        "hosts":[
+            {
+               "hostName":"cloudera",
+               "hostTemplateRefName":"HostTemplate-0-from-cloudera"
+            }
+         ],
+        "lenient": false,
+        "roleConfigGroups": [
+            {
+                "name": "",
+                "rcgRefName": "impala-IMPALAD-2"
+            },
+            {
+                "name": "",
+                "rcgRefName": "impala-IMPALAD-1"
+            },
+            {
+                "name": "",
+                "rcgRefName": "solr-SOLR_SERVER-1"
+            },
+            {
+                "name": "",
+                "rcgRefName": "hdfs-NAMENODE-1"
+            },
+            {
+                "name": "",
+                "rcgRefName": "hdfs-DATANODE-1"
+            },
+            {
+                "name": "",
+                "rcgRefName": "hdfs-DATANODE-2"
+            },
+            {
+                "name": "",
+                "rcgRefName": "yarn-NODEMANAGER-2"
+            },
+            {
+                "name": "",
+                "rcgRefName": "yarn-NODEMANAGER-1"
+            },
+            {
+                "name": "",
+                "rcgRefName": "hbase-REGIONSERVER-1"
+            },
+            {
+                "name": "",
+                "rcgRefName": "hbase-REGIONSERVER-2"
+            },
+            {
+                "name": "",
+                "rcgRefName": "kafka-KAFKA_BROKER-1"
+            },
+            {
+                "name": "",
+                "rcgRefName": "kafka-KAFKA_BROKER-2"
+            },
+            {
+                "name": "",
+                "rcgRefName": "kafka-KAFKA_BROKER-3"
+            }
+        ],
+        "variables": [
+            {
+                "name": "atlas-ATLAS_SERVER-BASE-atlas_admin_password",
+                "value": "<changeme>"
+            },
+            {
+                "name": "hdfs-JOURNALNODE-BASE-dfs_journalnode_edits_dir",
+                "value": "/dfs/jn"
+            },
+            {
+                "name": "hive-hive_metastore_database_host",
+                "value": "cdp01.cloudera.internal"
+            },
+            {
+                "name": "hive-hive_metastore_database_name",
+                "value": "hive"
+            },
+            {
+                "name": "hive-hive_metastore_database_password",
+                "value": "<changeme>"
+            },
+            {
+                "name": "hue-bind_password",
+                "value": "<changeme>"
+            },
+            {
+                "name": "hue-database_host",
+                "value": "cdp01.cloudera.internal"
+            },
+            {
+                "name": "hue-database_password",
+                "value": "<changeme>"
+            },
+            {
+                "name": "hue-database_type",
+                "value": "mysql"
+            },
+            {
+                "name": "knox-KNOX_GATEWAY-BASE-gateway_master_secret",
+                "value": "<changeme>"
+            },
+            {
+                "name": "kudu-KUDU_MASTER-BASE-fs_data_dirs",
+                "value": "/kudu/master/data"
+            },
+            {
+                "name": "kudu-KUDU_MASTER-BASE-fs_wal_dir",
+                "value": "/kudu/master/wal"
+            },
+            {
+                "name": "kudu-KUDU_TSERVER-BASE-fs_data_dirs",
+                "value": "/kudu/tablet/data"
+            },
+            {
+                "name": "kudu-KUDU_TSERVER-BASE-fs_wal_dir",
+                "value": "/kudu/tablet/wal"
+            },
+            {
+                "name": "oozie-OOZIE_SERVER-BASE-oozie_database_host",
+                "value": "cdp01.cloudera.internal"
+            },
+            {
+                "name": "oozie-OOZIE_SERVER-BASE-oozie_database_password",
+                "value": "<changeme>"
+            },
+            {
+                "name": "oozie-OOZIE_SERVER-BASE-oozie_database_type",
+                "value": "mysql"
+            },
+            {
+                "name": "oozie-OOZIE_SERVER-BASE-oozie_database_user",
+                "value": "oozie"
+            },
+            {
+                "name": "ranger-RANGER_ADMIN-BASE-ranger_ldap_bind_password",
+                "value": "<changeme>"
+            },
+            {
+                "name": "ranger-RANGER_USERSYNC-BASE-ranger.usersync.keystore.password",
+                "value": "<changeme>"
+            },
+            {
+                "name": "ranger-RANGER_USERSYNC-BASE-ranger_usersync_ldap_ldapbindpassword",
+                "value": "<changeme>"
+            },
+            {
+                "name": "ranger-keyadmin_user_password",
+                "value": "<changeme>"
+            },
+            {
+                "name": "ranger-ranger_database_host",
+                "value": "cdp01.cloudera.internal"
+            },
+            {
+                "name": "ranger-ranger_database_password",
+                "value": "<changeme>"
+            },
+            {
+                "name": "ranger-ranger_database_port",
+                "value": "3306"
+            },
+            {
+                "name": "ranger-ranger_database_type",
+                "value": "mysql"
+            },
+            {
+                "name": "ranger-ranger_database_user",
+                "value": "ranger"
+            },
+            {
+                "name": "ranger-rangeradmin_user_password",
+                "value": "<changeme>"
+            },
+            {
+                "name": "ranger-rangertagsync_user_password",
+                "value": "<changeme>"
+            },
+            {
+                "name": "ranger-rangerusersync_user_password",
+                "value": "<changeme>"
+            },
+            {
+                "name": "ranger_kms-RANGER_KMS_SERVER-BASE-ranger_kms_master_key_password",
+                "value": "<changeme>"
+            },
+            {
+                "name": "ranger_kms-ranger_kms_database_host",
+                "value": "cdp01.cloudera.internal"
+            },
+            {
+                "name": "ranger_kms-ranger_kms_database_password",
+                "value": "<changeme>"
+            },
+            {
+                "name": "ranger_kms-ranger_kms_database_port",
+                "value": "3306"
+            },
+            {
+                "name": "ranger_kms-ranger_kms_database_type",
+                "value": "mysql"
+            },
+            {
+                "name": "ranger_rms-ranger_rms_database_password",
+                "value": "<changeme>"
+            },
+            {
+                "name": "streams_messaging_manager-smm_database_host",
+                "value": "cdp01.cloudera.internal"
+            },
+            {
+                "name": "streams_messaging_manager-smm_database_password",
+                "value": "<changeme>"
+            }
+        ]
+    },
+    "products": [
+        {
+            "product": "CDSW",
+            "version": "1.9.1.p1.10118148"
+        },
+        {
+            "product": "CFM",
+            "version": "2.0.1.0-71"
+        },
+        {
+            "product": "SPARK3",
+            "version": "3.1.1.3.1.7270.0-253-1.p0.11638568"
+        },
+        {
+            "product": "FLINK",
+            "version": "1.13.2-csa1.5.1.0-cdh7.1.7.0-551-18404383"
+        },
+        {
+            "product": "CDH",
+            "version": "7.1.7-1.cdh7.1.7.p0.15945976"
+        },
+        {
+            "product": "Anaconda",
+            "version": "5.1.0.1"
+        }
+    ],
+    "repositories": [
+        "http://10.32.2.18/cloudera/parcels/csa/1.5.1.0/",
+        "https://archive.cloudera.com/p/csa/1.5/parcels",
+        "https://archive.cloudera.com/p/spark3/3.1.7270.0/parcels/",
+        "https://archive.cloudera.com/kafka/parcels/latest/",
+        "http://archive.cloudera.com/kudu/parcels/latest/"
+    ],
+    "services": [
+        {
+            "refName": "zookeeper",
+            "serviceConfigs": [
+                {
+                    "name": "enableSecurity",
+                    "value": "true"
+                },
+                {
+                    "name": "quorum_auth_enable_sasl",
+                    "value": "true"
+                }
+            ],
+            "serviceType": "ZOOKEEPER"
+        },
+        {
+            "refName": "oozie",
+            "serviceType": "OOZIE"
+        },
+        {
+            "refName": "ranger",
+            "serviceConfigs": [
+                {
+                    "name": "ranger_database_port",
+                    "variable": "ranger-ranger_database_port"
+                },
+                {
+                    "name": "rangeradmin_user_password",
+                    "variable": "ranger-rangeradmin_user_password"
+                },
+                {
+                    "name": "ranger_database_host",
+                    "variable": "ranger-ranger_database_host"
+                },
+                {
+                    "name": "ranger_database_user",
+                    "variable": "ranger-ranger_database_user"
+                },
+                {
+                    "name": "ranger_database_type",
+                    "variable": "ranger-ranger_database_type"
+                },
+                {
+                    "name": "rangertagsync_user_password",
+                    "variable": "ranger-rangertagsync_user_password"
+                },
+                {
+                    "name": "ranger_database_password",
+                    "variable": "ranger-ranger_database_password"
+                },
+                {
+                    "name": "rangerusersync_user_password",
+                    "variable": "ranger-rangerusersync_user_password"
+                },
+                {
+                    "name": "keyadmin_user_password",
+                    "variable": "ranger-keyadmin_user_password"
+                }
+            ],
+            "serviceType": "RANGER"
+        },
+        {
+            "refName": "impala",
+            "serviceConfigs": [
+                {
+                    "name": "enable_ldap_tls",
+                    "value": "true"
+                },
+                {
+                    "name": "hbase_service",
+                    "ref": "hbase"
+                },
+                {
+                    "name": "hadoop_secure_web_ui",
+                    "value": "true"
+                },
+                {
+                    "name": "impala_ldap_uri",
+                    "value": "ldap://ipa.cloudera.internal"
+                },
+                {
+                    "name": "enable_ldap_auth",
+                    "value": "true"
+                },
+                {
+                    "name": "impala_cmd_args_safety_valve",
+                    "value": "--auth_creds_ok_in_clear"
+                },
+                {
+                    "name": "ldap_baseDN",
+                    "value": "cn=users,cn=accounts,dc=cloudera,dc=internal"
+                },
+                {
+                    "name": "atlas_service",
+                    "ref": "atlas"
+                },
+                {
+                    "name": "service_config_suppression_impala_ldap_validator",
+                    "value": "true"
+                }
+            ],
+            "serviceType": "IMPALA"
+        },
+        {
+            "refName": "tez",
+            "roleConfigGroups": [
+                {
+                    "base": true,
+                    "configs": [
+                        {
+                            "name": "tez-conf/tez-site.xml_client_config_safety_valve",
+                            "value": "<property><name>tez.tez-ui.history-url.base</name><value>http://cdp02.cloudera.internal/tez-ui</value></property><property><name>tez.dag.history.logging.enabled</name><value>true</value></property><property><name>tez.history.logging.service.class</name><value>org.apache.tez.dag.history.logging.ats.ATSHistoryLoggingService</value></property><property><name>tez.am.history.logging.enabled</name><value>true</value></property><property><name>tez.allow.disabled.timeline-domains</name><value>true</value></property>"
+                        }
+                    ],
+                    "refName": "tez-GATEWAY-BASE",
+                    "roleType": "GATEWAY"
+                }
+            ],
+            "serviceConfigs": [
+                {
+                    "name": "yarn.timeline-service.enabled",
+                    "value": "true"
+                }
+            ],
+            "serviceType": "TEZ"
+        },
+        {
+            "refName": "hive_on_tez",
+            "roleConfigGroups": [
+                {
+                    "base": true,
+                    "refName": "hive_on_tez-GATEWAY-BASE",
+                    "roleType": "GATEWAY"
+                }
+            ],
+            "serviceConfigs": [
+                {
+                    "name": "hive_default_fileformat_managed",
+                    "value": "PARQUET"
+                },
+                {
+                    "name": "hbase_service",
+                    "ref": "hbase"
+                },
+                {
+                    "name": "generate_jceks_password",
+                    "value": "false"
+                },
+                {
+                    "name": "hive_aux_jars_path_dir",
+                    "value": "/var/lib/hive"
+                },
+                {
+                    "name": "service_config_suppression_hive_client_ssl_recommended_with_ldap_auth_validator",
+                    "value": "true"
+                },
+                {
+                    "name": "service_config_suppression_hiveserver2_ldap_uri",
+                    "value": "true"
+                },
+                {
+                    "name": "atlas_service",
+                    "ref": "atlas"
+                },
+                {
+                    "name": "hiveserver2_ldap_uri",
+                    "value": "ldap://ipa.cloudera.internal"
+                },
+                {
+                    "name": "hive_service_config_safety_valve",
+                    "value": "<property><name>hive.exec.post.hooks</name><value>org.apache.hadoop.hive.ql.hooks.ATSHook,org.apache.hadoop.hive.ql.hooks.HiveProtoLoggingHook,org.apache.atlas.hive.hook.HiveHook</value></property><property><name>hive.exec.pre.hooks</name><value>org.apache.hadoop.hive.ql.hooks.ATSHook,org.apache.hadoop.hive.ql.hooks.HiveProtoLoggingHook</value></property><property><name>hive.exec.failure.hooks</name><value>org.apache.hadoop.hive.ql.hooks.ATSHook,org.apache.hadoop.hive.ql.hooks.HiveProtoLoggingHook</value></property><property><name>hive.server2.tez.initialize.default.sessions</name><value>false</value></property><property><name>hive.server2.tez.queue.access.check</name><value>true</value></property><property><name>hive.server2.tez.sessions.custom.queue.allowed</name><value>true</value></property>"
+                },
+                {
+                    "name": "hive_default_fileformat",
+                    "value": "ORC"
+                },
+                {
+                    "name": "hiveserver2_enable_ldap_auth",
+                    "value": "true"
+                },
+                {
+                    "name": "tez_container_size",
+                    "value": "1024"
+                },
+                {
+                    "name": "hiveserver2_ldap_basedn",
+                    "value": "cn=users,cn=accounts,dc=cloudera,dc=internal"
+                }
+            ],
+            "serviceType": "HIVE_ON_TEZ"
+        },
+        {
+            "refName": "solr",
+            "roleConfigGroups": [
+                {
+                    "base": true,
+                    "refName": "solr-GATEWAY-BASE",
+                    "roleType": "GATEWAY"
+                }
+            ],
+            "serviceConfigs": [
+                {
+                    "name": "solr_security_authentication",
+                    "value": "kerberos"
+                },
+                {
+                    "name": "ranger_service",
+                    "ref": "none"
+                }
+            ],
+            "serviceType": "SOLR"
+        },
+        {
+            "refName": "hue",
+            "serviceConfigs": [
+                {
+                    "name": "atlas_service",
+                    "ref": "atlas"
+                },
+                {
+                    "name": "database_type",
+                    "variable": "hue-database_type"
+                },
+                {
+                    "name": "group_member_attr",
+                    "value": "member"
+                },
+                {
+                    "name": "hue_service_safety_valve",
+                    "value": "[notebook]\nshow_notebooks=true\n\n[hbase]\nssl_cert_ca_verify=false\nhbase_conf_dir=/var/run/cloudera-scm-agent/process/HBASE-CONF"
+                },
+                {
+                    "name": "bind_password",
+                    "variable": "hue-bind_password"
+                },
+                {
+                    "name": "search_bind_authentication",
+                    "value": "true"
+                },
+                {
+                    "name": "test_ldap_user",
+                    "value": "ldapbind"
+                },
+                {
+                    "name": "user_name_attr",
+                    "value": "uid"
+                },
+                {
+                    "name": "database_password",
+                    "variable": "hue-database_password"
+                },
+                {
+                    "name": "database_host",
+                    "variable": "hue-database_host"
+                },
+                {
+                    "name": "ldap_url",
+                    "value": "ldap://ipa.cloudera.internal"
+                },
+                {
+                    "name": "group_name_attr",
+                    "value": "cn"
+                },
+                {
+                    "name": "hbase_service",
+                    "ref": "hbase"
+                },
+                {
+                    "name": "bind_dn",
+                    "value": "uid=ldapbind,cn=users,cn=accounts,dc=cloudera,dc=internal"
+                },
+                {
+                    "name": "ldap_username_pattern",
+                    "value": "uid=<username>,cn=users,cn=accounts,dc=cloudera,dc=internal"
+                },
+                {
+                    "name": "hue_webhdfs",
+                    "ref": "hdfs-HTTPFS-47f6e7551e6c836c54773828779bbe41"
+                },
+                {
+                    "name": "base_dn",
+                    "value": "dc=cloudera,dc=internal"
+                },
+                {
+                    "name": "time_zone",
+                    "value": "Asia/Shanghai"
+                },
+                {
+                    "name": "hue_hbase_thrift",
+                    "ref": "hbase-HBASETHRIFTSERVER-df4fd014f8cac395879bf1f905be62f7"
+                },
+                {
+                    "name": "group_filter",
+                    "value": "(objectClass=*)"
+                },
+                {
+                    "name": "user_filter",
+                    "value": "(objectClass=person)"
+                },
+                {
+                    "name": "auth_backend",
+                    "value": "desktop.auth.backend.LdapBackend,desktop.auth.backend.AllowFirstUserDjangoBackend"
+                }
+            ],
+            "serviceType": "HUE"
+        },
+        {
+            "refName": "spark_on_yarn",
+            "roleConfigGroups": [
+                {
+                    "base": true,
+                    "refName": "spark_on_yarn-GATEWAY-BASE",
+                    "roleType": "GATEWAY"
+                }
+            ],
+            "serviceConfigs": [
+                {
+                    "name": "hbase_service",
+                    "ref": "hbase"
+                },
+                {
+                    "name": "atlas_service",
+                    "ref": "atlas"
+                }
+            ],
+            "serviceType": "SPARK_ON_YARN"
+        },
+        {
+            "refName": "hdfs",
+            "roleConfigGroups": [
+                {
+                    "base": true,
+                    "refName": "hdfs-GATEWAY-BASE",
+                    "roleType": "GATEWAY"
+                }
+            ],
+            "roles": [
+                {
+                    "refName": "hdfs-HTTPFS-47f6e7551e6c836c54773828779bbe41",
+                    "roleType": "HTTPFS"
+                }
+            ],
+            "serviceConfigs": [
+                {
+                    "name": "ranger_security_safety_valve",
+                    "value": "<property><name>ranger.plugin.hdfs.chained.services\t</name><value>cm_hive</value></property><property><name>ranger.plugin.hdfs.chained.services.cm_hive.impl</name><value>org.apache.ranger.chainedplugin.hdfs.hive.RangerHdfsHiveChainedPlugin</value></property>"
+                },
+                {
+                    "name": "hadoop_security_authentication",
+                    "value": "kerberos"
+                },
+                {
+                    "name": "core_site_safety_valve",
+                    "value": "<property><name>ipc.maximum.data.length</name><value>268435456</value></property>\n<property>\n    <name>hadoop.proxyuser.presto.hosts</name>\n    <value>*</value>\n</property>\n    <property><name>hadoop.proxyuser.presto.groups</name>\n    <value>*</value>\n</property>"
+                },
+                {
+                    "name": "navigator_client_max_num_audit_log",
+                    "value": "3"
+                },
+                {
+                    "name": "enable_ranger_authorization",
+                    "value": "true"
+                },
+                {
+                    "name": "service_config_suppression_hadoop_secure_web_ui",
+                    "value": "true"
+                },
+                {
+                    "name": "hdfs_service_config_safety_valve",
+                    "value": "<property><name>ipc.maximum.data.length</name><value>268435456</value></property>"
+                },
+                {
+                    "name": "dfs_encrypt_data_transfer_algorithm",
+                    "value": "AES/CTR/NoPadding"
+                },
+                {
+                    "name": "hadoop_security_authorization",
+                    "value": "true"
+                }
+            ],
+            "serviceType": "HDFS"
+        },
+        {
+            "refName": "knox",
+            "roleConfigGroups": [
+                {
+                    "base": true,
+                    "refName": "knox-GATEWAY-BASE",
+                    "roleType": "GATEWAY"
+                }
+            ],
+            "serviceConfigs": [
+                {
+                    "name": "kerberos.auth.enabled",
+                    "value": "true"
+                }
+            ],
+            "serviceType": "KNOX"
+        },
+        {
+            "refName": "yarn",
+            "roleConfigGroups": [
+                {
+                    "base": true,
+                    "configs": [
+                        {
+                            "name": "yarn_client_config_safety_valve",
+                            "value": "<property><name>yarn.nodemanager.aux-services</name><value>mapreduce_shuffle,spark_shuffle,timeline_collector</value><description>The auxiliary service name</description></property><property><name>yarn.nodemanager.aux-services.timeline_collector.class</name><value>org.apache.hadoop.yarn.server.timelineservice.collector.PerNodeTimelineCollectorsAuxService</value></property><property><name>yarn.timeline-service.address</name><value>cdp02.cloudera.internal:10200</value></property><property><name>yarn.timeline-service.bind-host</name><value>0.0.0.0</value></property><property><name>yarn.timeline-service.client.max-retries</name><value>30</value></property><property><name>yarn.timeline-service.client.retry-interval-ms</name><value>1000</value></property><property><name>yarn.timeline-service.enabled</name><value>true</value></property><property><name>yarn.timeline-service.entity-group-fs-store.active-dir</name><value>/ats/active</value></property><property><name>yarn.timeline-service.entity-group-fs-store.cleaner-interval-seconds</name><value>3600</value></property><property><name>yarn.timeline-service.entity-group-fs-store.done-dir</name><value>/ats/done/</value></property><property><name>yarn.timeline-service.entity-group-fs-store.group-id-plugin-classes</name><value>org.apache.hadoop.yarn.applications.distributedshell.DistributedShellTimelinePlugin</value></property><property><name>yarn.timeline-service.entity-group-fs-store.retain-seconds</name><value>604800</value></property><property><name>yarn.timeline-service.entity-group-fs-store.scan-interval-seconds</name><value>60</value></property><property><name>yarn.timeline-service.entity-group-fs-store.summary-store</name><value>org.apache.hadoop.yarn.server.timeline.RollingLevelDBTimelineStore</value></property><property><name>yarn.timeline-service.generic-application-history.save-non-am-container-meta-info</name><value>false</value></property><property><name>yarn.timeline-service.generic-application-history.store-class</name><value>org.apache.hadoop.yarn.server.applicationhistoryservice.NullApplicationHistoryStore</value></property><property><name>yarn.timeline-service.hbase-schema.prefix</name><value>prod.</value></property><property><name>yarn.timeline-service.hbase.configuration.file</name><value>file:///etc/hbase/conf/hbase-site.xml</value></property><property><name>yarn.timeline-service.hbase.coprocessor.jar.hdfs.location</name><value>file:///opt/cloudera/parcels/CDH/jars/hadoop-yarn-server-timelineservice-hbase-coprocessor-3.1.1.7.1.7.0-551.jar</value></property><property><name>yarn.timeline-service.http-authentication.cookie.path</name><value></value></property><property><name>yarn.timeline-service.http-authentication.simple.anonymous.allowed</name><value>true</value></property><property><name>yarn.timeline-service.http-authentication.type</name><value>simple</value></property><property><name>yarn.timeline-service.http-cross-origin.enabled</name><value>true</value></property><property><name>yarn.timeline-service.keytab</name><value>/etc/yarn-timeline/conf/yarn.keytab</value></property><property><name>yarn.timeline-service.leveldb-state-store.path</name><value>/yarn/timeline</value><description>Store file name for leveldb timeline state store.</description></property><property><name>yarn.timeline-service.leveldb-timeline-store.path</name><value>/yarn/timeline</value></property><property><name>yarn.timeline-service.leveldb-timeline-store.read-cache-size</name><value>104857600</value></property><property><name>yarn.timeline-service.leveldb-timeline-store.start-time-read-cache-size</name><value>10000</value></property><property><name>yarn.timeline-service.leveldb-timeline-store.start-time-write-cache-size</name><value>10000</value></property><property><name>yarn.timeline-service.leveldb-timeline-store.ttl-interval-ms</name><value>300000</value></property><property><name>yarn.timeline-service.principal</name><value>yarn/_HOST@CLOUDERA.INTERNAL</value></property><property><name>yarn.timeline-service.reader.webapp.address</name><value>cdp02.cloudera.internal:8198</value></property><property><name>yarn.timeline-service.reader.webapp.https.address</name><value>cdp02.cloudera.internal:8199</value></property><property><name>yarn.timeline-service.recovery.enabled</name><value>true</value></property><property><name>yarn.timeline-service.state-store-class</name><value>org.apache.hadoop.yarn.server.timeline.recovery.LeveldbTimelineStateStore</value></property><property><name>yarn.timeline-service.store-class</name><value>org.apache.hadoop.yarn.server.timeline.EntityGroupFSTimelineStore</value></property><property><name>yarn.timeline-service.ttl-enable</name><value>2678400000</value></property><property><name>yarn.timeline-service.version</name><value>2.0f</value></property><property><name>yarn.timeline-service.versions</name><value>1.5f,2.0f</value></property><property><name>yarn.timeline-service.webapp.address</name><value>cdp02.cloudera.internal:8188</value></property><property><name>yarn.timeline-service.webapp.https.address</name><value>cdp02.cloudera.internal:8190</value></property><property><name>yarn.timeline-service.read.authentication.enabled</name><value>true</value></property><property><name>yarn.resourcemanager.system-metrics-publisher.enabled</name><value>true</value></property>"
+                        }
+                    ],
+                    "refName": "yarn-GATEWAY-BASE",
+                    "roleType": "GATEWAY"
+                }
+            ],
+            "serviceConfigs": [
+                {
+                    "name": "cm_yarn_container_usage_job_user",
+                    "value": "nifi"
+                },
+                {
+                    "name": "yarn_service_config_safety_valve",
+                    "value": "<property><name>yarn.cluster.max-application-priority</name><value>100</value></property><property><name>yarn.nodemanager.aux-services</name><value>mapreduce_shuffle,spark_shuffle,timeline_collector</value><description>The auxiliary service name</description></property><property><name>yarn.nodemanager.aux-services.timeline_collector.class</name><value>org.apache.hadoop.yarn.server.timelineservice.collector.PerNodeTimelineCollectorsAuxService</value></property><property><name>yarn.timeline-service.address</name><value>cdp02.cloudera.internal:10200</value></property><property><name>yarn.timeline-service.bind-host</name><value>0.0.0.0</value></property><property><name>yarn.timeline-service.client.max-retries</name><value>30</value></property><property><name>yarn.timeline-service.client.retry-interval-ms</name><value>1000</value></property><property><name>yarn.timeline-service.enabled</name><value>true</value></property><property><name>yarn.timeline-service.entity-group-fs-store.active-dir</name><value>/ats/active</value></property><property><name>yarn.timeline-service.entity-group-fs-store.cleaner-interval-seconds</name><value>3600</value></property><property><name>yarn.timeline-service.entity-group-fs-store.done-dir</name><value>/ats/done/</value></property><property><name>yarn.timeline-service.entity-group-fs-store.group-id-plugin-classes</name><value>org.apache.hadoop.yarn.applications.distributedshell.DistributedShellTimelinePlugin</value></property><property><name>yarn.timeline-service.entity-group-fs-store.retain-seconds</name><value>604800</value></property><property><name>yarn.timeline-service.entity-group-fs-store.scan-interval-seconds</name><value>60</value></property><property><name>yarn.timeline-service.entity-group-fs-store.summary-store</name><value>org.apache.hadoop.yarn.server.timeline.RollingLevelDBTimelineStore</value></property><property><name>yarn.timeline-service.generic-application-history.save-non-am-container-meta-info</name><value>false</value></property><property><name>yarn.timeline-service.generic-application-history.store-class</name><value>org.apache.hadoop.yarn.server.applicationhistoryservice.NullApplicationHistoryStore</value></property><property><name>yarn.timeline-service.hbase-schema.prefix</name><value>prod.</value></property><property><name>yarn.timeline-service.hbase.configuration.file</name><value>file:///etc/hbase/conf/hbase-site.xml</value></property><property><name>yarn.timeline-service.hbase.coprocessor.jar.hdfs.location</name><value>file:///opt/cloudera/parcels/CDH/jars/hadoop-yarn-server-timelineservice-hbase-coprocessor-3.1.1.7.1.7.0-551.jar</value></property><property><name>yarn.timeline-service.http-authentication.cookie.path</name><value></value></property><property><name>yarn.timeline-service.http-authentication.simple.anonymous.allowed</name><value>true</value></property><property><name>yarn.timeline-service.http-authentication.type</name><value>simple</value></property><property><name>yarn.timeline-service.http-cross-origin.enabled</name><value>true</value></property><property><name>yarn.timeline-service.keytab</name><value>/etc/yarn-timeline/conf/yarn.keytab</value></property><property><name>yarn.timeline-service.leveldb-state-store.path</name><value>/yarn/timeline</value><description>Store file name for leveldb timeline state store.</description></property><property><name>yarn.timeline-service.leveldb-timeline-store.path</name><value>/yarn/timeline</value></property><property><name>yarn.timeline-service.leveldb-timeline-store.read-cache-size</name><value>104857600</value></property><property><name>yarn.timeline-service.leveldb-timeline-store.start-time-read-cache-size</name><value>10000</value></property><property><name>yarn.timeline-service.leveldb-timeline-store.start-time-write-cache-size</name><value>10000</value></property><property><name>yarn.timeline-service.leveldb-timeline-store.ttl-interval-ms</name><value>300000</value></property><property><name>yarn.timeline-service.principal</name><value>yarn/_HOST@CLOUDERA.INTERNAL</value></property><property><name>yarn.timeline-service.reader.webapp.address</name><value>cdp02.cloudera.internal:8198</value></property><property><name>yarn.timeline-service.reader.webapp.https.address</name><value>cdp02.cloudera.internal:8199</value></property><property><name>yarn.timeline-service.recovery.enabled</name><value>true</value></property><property><name>yarn.timeline-service.state-store-class</name><value>org.apache.hadoop.yarn.server.timeline.recovery.LeveldbTimelineStateStore</value></property><property><name>yarn.timeline-service.store-class</name><value>org.apache.hadoop.yarn.server.timeline.EntityGroupFSTimelineStore</value></property><property><name>yarn.timeline-service.ttl-enable</name><value>2678400000</value></property><property><name>yarn.timeline-service.version</name><value>2.0f</value></property><property><name>yarn.timeline-service.versions</name><value>1.5f,2.0f</value></property><property><name>yarn.timeline-service.webapp.address</name><value>cdp02.cloudera.internal:8188</value></property><property><name>yarn.timeline-service.webapp.https.address</name><value>cdp02.cloudera.internal:8190</value></property><property><name>yarn.timeline-service.read.authentication.enabled</name><value>true</value></property><property><name>yarn.resourcemanager.system-metrics-publisher.enabled</name><value>true</value></property>"
+                },
+                {
+                    "name": "yarn_admin_acl",
+                    "value": "yarn,dr.who"
+                },
+                {
+                    "name": "yarn_resourcemanager_capacity_scheduler_aqc_auto_deletion",
+                    "value": "false"
+                },
+                {
+                    "name": "service_config_suppression_hadoop_secure_web_ui",
+                    "value": "true"
+                },
+                {
+                    "name": "yarn_resourcemanager_capacity_scheduler_preemption",
+                    "value": "false"
+                },
+                {
+                    "name": "yarn_node_labels_enabled",
+                    "value": "false"
+                },
+                {
+                    "name": "queuemanager_service",
+                    "ref": "queuemanager"
+                }
+            ],
+            "serviceType": "YARN"
+        },
+        {
+            "refName": "hbase",
+            "roleConfigGroups": [
+                {
+                    "base": true,
+                    "configs": [
+                        {
+                            "name": "hbase_client_java_heapsize",
+                            "value": "1073741824"
+                        }
+                    ],
+                    "refName": "hbase-GATEWAY-BASE",
+                    "roleType": "GATEWAY"
+                }
+            ],
+            "roles": [
+                {
+                    "refName": "hbase-HBASETHRIFTSERVER-df4fd014f8cac395879bf1f905be62f7",
+                    "roleType": "HBASETHRIFTSERVER"
+                }
+            ],
+            "serviceConfigs": [
+                {
+                    "name": "navigator_client_max_num_audit_log",
+                    "value": "3"
+                },
+                {
+                    "name": "service_config_suppression_hadoop_secure_web_ui",
+                    "value": "true"
+                },
+                {
+                    "name": "ranger_service",
+                    "ref": "ranger"
+                },
+                {
+                    "name": "hbase_thriftserver_support_proxyuser",
+                    "value": "true"
+                },
+                {
+                    "name": "atlas_service",
+                    "ref": "none"
+                },
+                {
+                    "name": "hbase_security_authorization",
+                    "value": "true"
+                },
+                {
+                    "name": "hbase_security_authentication",
+                    "value": "kerberos"
+                },
+                {
+                    "name": "hbase_superuser",
+                    "value": "hbase"
+                },
+                {
+                    "name": "hbase_thriftserver_security_authentication",
+                    "value": "auth-conf"
+                },
+                {
+                    "name": "hbase_graceful_stop_timeout",
+                    "value": "3"
+                }
+            ],
+            "serviceType": "HBASE"
+        },
+        {
+            "refName": "hive",
+            "roleConfigGroups": [
+                {
+                    "base": true,
+                    "refName": "hive-GATEWAY-BASE",
+                    "roleType": "GATEWAY"
+                }
+            ],
+            "serviceConfigs": [
+                {
+                    "name": "atlas_service",
+                    "ref": "atlas"
+                },
+                {
+                    "name": "hive_metastore_database_password",
+                    "variable": "hive-hive_metastore_database_password"
+                },
+                {
+                    "name": "hive_metastore_database_host",
+                    "variable": "hive-hive_metastore_database_host"
+                },
+                {
+                    "name": "hbase_service",
+                    "ref": "hbase"
+                },
+                {
+                    "name": "hive_metastore_database_name",
+                    "variable": "hive-hive_metastore_database_name"
+                },
+                {
+                    "name": "hive_aux_jars_path_dir",
+                    "value": "/var/lib/hive"
+                }
+            ],
+            "serviceType": "HIVE"
+        },
+        {
+            "refName": "kafka",
+            "roleConfigGroups": [
+                {
+                    "base": true,
+                    "refName": "kafka-GATEWAY-BASE",
+                    "roleType": "GATEWAY"
+                }
+            ],
+            "serviceConfigs": [
+                {
+                    "name": "hdfs_service",
+                    "ref": "hdfs"
+                },
+                {
+                    "name": "ranger_service",
+                    "ref": "ranger"
+                },
+                {
+                    "name": "kerberos.auth.enable",
+                    "value": "true"
+                },
+                {
+                    "name": "zookeeper_service",
+                    "ref": "zookeeper"
+                }
+            ],
+            "serviceType": "KAFKA"
+        },
+        {
+            "refName": "atlas",
+            "roleConfigGroups": [
+                {
+                    "base": true,
+                    "refName": "atlas-GATEWAY-BASE",
+                    "roleType": "GATEWAY"
+                }
+            ],
+            "serviceConfigs": [
+                {
+                    "name": "hdfs_service",
+                    "ref": "hdfs"
+                },
+                {
+                    "name": "solr_service",
+                    "ref": "solr"
+                },
+                {
+                    "name": "ranger_service",
+                    "ref": "ranger"
+                },
+                {
+                    "name": "kafka_service",
+                    "ref": "kafka"
+                },
+                {
+                    "name": "hbase_service",
+                    "ref": "hbase"
+                }
+            ],
+            "serviceType": "ATLAS"
+        },
+        {
+            "refName": "nifi",
+            "roleConfigGroups": [
+                {
+                    "base": true,
+                    "refName": "nifi-GATEWAY-BASE",
+                    "roleType": "GATEWAY"
+                }
+            ],
+            "serviceConfigs": [
+                {
+                    "name": "zookeeper_service",
+                    "ref": "zookeeper"
+                },
+                {
+                    "name": "atlas_service",
+                    "ref": "none"
+                },
+                {
+                    "name": "ranger_service",
+                    "ref": "none"
+                },
+                {
+                    "name": "knox_service",
+                    "ref": "none"
+                },
+                {
+                    "name": "kafka_service",
+                    "ref": "kafka"
+                },
+                {
+                    "name": "hdfs_service",
+                    "ref": "hdfs"
+                }
+            ],
+            "serviceType": "NIFI"
+        },
+        {
+            "refName": "queuemanager",
+            "serviceConfigs": [
+                {
+                    "name": "zookeeper_service",
+                    "ref": "zookeeper"
+                }
+            ],
+            "serviceType": "QUEUEMANAGER"
+        },
+        {
+            "refName": "zeppelin",
+            "serviceConfigs": [
+                {
+                    "name": "knox_service",
+                    "ref": "none"
+                },
+                {
+                    "name": "yarn_service",
+                    "ref": "yarn"
+                },
+                {
+                    "name": "hdfs_service",
+                    "ref": "hdfs"
+                },
+                {
+                    "name": "spark_on_yarn_service",
+                    "ref": "spark_on_yarn"
+                }
+            ],
+            "serviceType": "ZEPPELIN"
+        },
+        {
+            "refName": "ranger_rms",
+            "serviceConfigs": [
+                {
+                    "name": "ranger_rms_database_host",
+                    "value": "cdp01.cloudera.internal"
+                },
+                {
+                    "name": "ranger_rms_database_password",
+                    "variable": "ranger_rms-ranger_rms_database_password"
+                },
+                {
+                    "name": "zookeeper_service",
+                    "ref": "zookeeper"
+                },
+                {
+                    "name": "ranger_rms_database_port",
+                    "value": "3306"
+                },
+                {
+                    "name": "ranger_rms_database_user",
+                    "value": "ranger"
+                },
+                {
+                    "name": "ranger_service",
+                    "ref": "ranger"
+                },
+                {
+                    "name": "ranger_rms_database_name",
+                    "value": "ranger"
+                },
+                {
+                    "name": "ranger_rms_database_type",
+                    "value": "mysql"
+                }
+            ],
+            "serviceType": "RANGER_RMS"
+        },
+        {
+            "refName": "livy",
+            "roleConfigGroups": [
+                {
+                    "base": true,
+                    "refName": "livy-GATEWAY-BASE",
+                    "roleType": "GATEWAY"
+                }
+            ],
+            "serviceConfigs": [
+                {
+                    "name": "hms_service",
+                    "ref": "hive"
+                },
+                {
+                    "name": "yarn_service",
+                    "ref": "yarn"
+                },
+                {
+                    "name": "spark_on_yarn_service",
+                    "ref": "spark_on_yarn"
+                }
+            ],
+            "serviceType": "LIVY"
+        },
+        {
+            "refName": "flink",
+            "roleConfigGroups": [
+                {
+                    "base": true,
+                    "refName": "flink-GATEWAY-BASE",
+                    "roleType": "GATEWAY"
+                }
+            ],
+            "serviceConfigs": [
+                {
+                    "name": "yarn_service",
+                    "ref": "yarn"
+                },
+                {
+                    "name": "flink-conf/flink-conf.yaml_service_safety_valve",
+                    "value": "classloader.check-leaked-classloader: false"
+                },
+                {
+                    "name": "zookeeper_service",
+                    "ref": "zookeeper"
+                },
+                {
+                    "name": "hive_service",
+                    "ref": "hive"
+                },
+                {
+                    "name": "hdfs_service",
+                    "ref": "hdfs"
+                },
+                {
+                    "name": "atlas_service",
+                    "ref": "atlas"
+                }
+            ],
+            "serviceType": "FLINK"
+        },
+        {
+            "refName": "ranger_kms",
+            "serviceConfigs": [
+                {
+                    "name": "ranger_kms_database_host",
+                    "variable": "ranger_kms-ranger_kms_database_host"
+                },
+                {
+                    "name": "ranger_kms_database_password",
+                    "variable": "ranger_kms-ranger_kms_database_password"
+                },
+                {
+                    "name": "ranger_kms_database_port",
+                    "variable": "ranger_kms-ranger_kms_database_port"
+                },
+                {
+                    "name": "ranger_kms_database_type",
+                    "variable": "ranger_kms-ranger_kms_database_type"
+                },
+                {
+                    "name": "zookeeper_service",
+                    "ref": "zookeeper"
+                }
+            ],
+            "serviceType": "RANGER_KMS"
+        },
+        {
+            "refName": "nifiregistry",
+            "serviceConfigs": [
+                {
+                    "name": "ranger_service",
+                    "ref": "none"
+                },
+                {
+                    "name": "knox_service",
+                    "ref": "none"
+                },
+                {
+                    "name": "nifi_service",
+                    "ref": "nifi"
+                }
+            ],
+            "serviceType": "NIFIREGISTRY"
+        },
+        {
+            "refName": "streams_messaging_manager",
+            "serviceConfigs": [
+                {
+                    "name": "smm_database_password",
+                    "variable": "streams_messaging_manager-smm_database_password"
+                },
+                {
+                    "name": "zookeeper_service",
+                    "ref": "zookeeper"
+                },
+                {
+                    "name": "ranger_service",
+                    "ref": "none"
+                },
+                {
+                    "name": "kafka_service",
+                    "ref": "kafka"
+                },
+                {
+                    "name": "smm_database_host",
+                    "variable": "streams_messaging_manager-smm_database_host"
+                }
+            ],
+            "serviceType": "STREAMS_MESSAGING_MANAGER"
+        },
+        {
+            "refName": "cruise_control",
+            "serviceConfigs": [
+                {
+                    "name": "zookeeper_service",
+                    "ref": "zookeeper"
+                },
+                {
+                    "name": "kafka_service",
+                    "ref": "kafka"
+                }
+            ],
+            "serviceType": "CRUISE_CONTROL"
+        },
+        {
+            "refName": "ozone",
+            "roleConfigGroups": [
+                {
+                    "base": true,
+                    "refName": "ozone-GATEWAY-BASE",
+                    "roleType": "GATEWAY"
+                }
+            ],
+            "serviceConfigs": [
+                {
+                    "name": "ranger_service",
+                    "ref": "ranger"
+                },
+                {
+                    "name": "ozone.scm.primordial.node.id",
+                    "value": "cdp01.cloudera.internal"
+                },
+                {
+                    "name": "ozone.service.id",
+                    "value": "myozone"
+                },
+                {
+                    "name": "hdfs_service",
+                    "ref": "hdfs"
+                }
+            ],
+            "serviceType": "OZONE"
+        },
+        {
+            "refName": "cdsw",
+            "serviceConfigs": [
+                {
+                    "name": "atlas_service",
+                    "ref": "atlas"
+                },
+                {
+                    "name": "hive_service",
+                    "ref": "hive"
+                },
+                {
+                    "name": "spark_on_yarn_service",
+                    "ref": "spark_on_yarn"
+                },
+                {
+                    "name": "cdsw.domain.config",
+                    "value": "cdsw.cloudera.internal"
+                },
+                {
+                    "name": "yarn_service",
+                    "ref": "yarn"
+                },
+                {
+                    "name": "solr_service",
+                    "ref": "solr"
+                },
+                {
+                    "name": "hbase_service",
+                    "ref": "hbase"
+                },
+                {
+                    "name": "hdfs_service",
+                    "ref": "hdfs"
+                },
+                {
+                    "name": "cdsw.master.ip.config",
+                    "value": "10.32.3.31"
+                }
+            ],
+            "serviceType": "CDSW"
+        },
+        {
+            "refName": "kudu",
+            "serviceConfigs": [
+                {
+                    "name": "hdfs_service",
+                    "ref": "hdfs"
+                },
+                {
+                    "name": "hms_service",
+                    "ref": "hive"
+                },
+                {
+                    "name": "ranger_service",
+                    "ref": "ranger"
+                }
+            ],
+            "serviceType": "KUDU"
+        }
+    ]
+}
